@@ -1,4 +1,4 @@
-package org.example;
+package src.main.java.org.example;
 
 import src.db.DB;
 import src.db.DbException;
@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Main {
+public class selectQuery {
     public static void main(String[] args) {
 
         Connection connection = null;
@@ -26,9 +26,9 @@ public class Main {
             throw new DbException(e.getMessage());
         }
         finally {
-            DB.closeConnection();
             DB.closeStatement(statement);
             DB.closeResultSet(rs);
+            DB.closeConnection();
         }
 
 
